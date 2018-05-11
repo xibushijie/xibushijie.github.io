@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>vue 点击当前元素添加class 去掉兄弟的class</title>
-    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+    <script src="../js/vue.js"></script>
 </head>
 <style type="text/css">
     .blue {color: #2175bc;}
@@ -11,7 +11,7 @@
 <body>
     <div id="app">
       <ul>
-        <li v-for="(index,todo) in todos" v-on:click="addClass(index)" v-bind:class="{ blue:index==current}">
+        <li v-for="(todo, index) in todos" v-on:click="addClass(index)" v-bind:class="{ blue:index==current}">
             {{ todo.text }}
         </li>
     </ul>
