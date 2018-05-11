@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>vue 点击当前元素添加class 去掉兄弟的class</title>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+</head>
+<style type="text/css">
+    .blue {color: #2175bc;}
+</style>
+<body>
+    <div id="app">
+      <ul>
+        <li v-for="(index,todo) in todos" v-on:click="addClass(index)" v-bind:class="{ blue:index==current}">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div>
+<script>
+new Vue({
+    el: '#app',
+        data: {
+        current:0,
+            todos: [
+            { text: '选项一' },
+            { text: '选项二' },
+            { text: '选项三' }
+        ]
+    },
+    methods:{
+        addClass:function(index){
+            this.current=index;
+        }
+    }
+})
+</script>
+</body>
+</html>
