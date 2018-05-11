@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueTab</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+       .active {
+            background: #f00;
+       }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>        
+        <li @click="toggle(index ,tab.view)" v-for="(tab,index) in tabs" :class="{active:active===index}">
+              {{tab.type}}       
+         </li>    
+    </ul>   
+   <component :is="currentView"></component>
+</div>
+
+</body>
+</html>
+<script>
+    Vue.component('child1', { 
+        template: "<p>this is child1</p>"
+    })
+    Vue.component('child2', { 
+        template: "<p>this is child2</p>"
+    })
+    new Vue({ 
+        el: "#app", 
+        data: {   
+            active: 0, 
+            currentView: 'child1',   
+            tabs: [   
+                {       
+                    type: 'tab1',   
+                    view: 'child1'  
+                },     
+                {       
+                    type: 'tab2',    
+                    view: 'child2'    
+                }  
+            ]  
+        }, 
+        methods: {  
+            toggle(i, v){    
+                this.active = i   
+                this.currentView = v  
+            } 
+        }
+    })
+</script>
