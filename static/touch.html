@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机端阻止页面滑动</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="../js/jquery-3.3.1.min.js"></script>	
+	<style>
+		.tk {	
+			display: none;
+			position: fixed;
+			top:0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0,0,0,.5);
+			text-align: center;
+		}
+		.touch {
+			touch-action:none;
+		}
+		.touch2 {
+			touch-action:auto;
+		}
+		.close {
+			color: #fff;
+			margin-top: 3rem;
+		}
+	</style>
+	
+</head>
+<body style="height: 2000px">
+	<input type="button" value="点击">
+	<div class="tk">
+		<div class="close">X</div>
+	</div>
+	<script>
+		$("input").click(function() {
+			$(".tk").show();
+			$("body").addClass('touch');
+		});
+
+		$(".close").click(function(event) {
+			$(".tk").hide();
+			$("body").removeClass('touch');
+		});
+	</script>
+</body>
+</html>
