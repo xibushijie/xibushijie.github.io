@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.00001,maximum-scale=1.00001,user-scalable=no,minimal-ui">
+	<link rel="stylesheet" href="../css/flex.css">
+	<style type="text/css">
+		*{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+		html{height: 100%;}
+		.flex-center{display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display:flex;justify-content: center;}
+		.flex-right{display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display:flex;justify-content: flex-end;}
+		.flex-items-center{height: 4rem;background-color: #ccc;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;-ms-align-items: center;align-items: center;justify-content: center;}
+
+		.flex-itemsLeft-center{height: 4rem;background-color: #f00;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;-ms-align-items: center;align-items: center;}
+		.flex-itemsRight-center{height: 4rem;background-color: #fff000;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;-ms-align-items: center;align-items: center;justify-content: flex-end;}
+		.flex-itemsBottom-center{background-color:#FF79C6;height: 4rem;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;justify-content: center;align-items: flex-end;}
+		.flex-rightBottom{background-color: #E7E7E7;height: 4rem;display: flex;justify-content: flex-end;align-items: flex-end;}
+
+		.flex-justify-content{height: 4rem;background-color: #fcfcfc;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;justify-content: space-between;align-items: center;}
+
+		/* 多元素上下居中对齐 */
+		.up-down-center{display: flex;justify-content:center;}
+		.up-down-center .box{display: flex;justify-content:center;flex-direction:column;align-items:center;height: 300px;background-color: #f00;width: 100%;}
+
+
+		/* 网格布局 */
+		.Grid{display: flex;}
+		.Grid-cell{flex: 1;justify-content: center;}
+		.Grid-cell-center{flex: 1;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;justify-content: center;}
+
+		/* 百分比布局Percentage */
+		.Grid-Percentage {display:flex;}
+		.Grid-cell-Percentage {flex:1;}
+		.Grid-cell-Percentage.u-full {flex:0 0 100%;}
+		.Grid-cell-Percentage.u-1of2 {flex:0 0 50%;}
+		.Grid-cell-Percentage.u-1of3 {flex:0 0 33.3333%;}
+		.Grid-cell-Percentage.u-1of4 {flex:0 0 25%;}
+		
+		/* 输入框布局 */
+		.InputAddOn {display:flex;}
+		.InputAddOn-field {flex:1;}
+
+		/* 悬挂式布局 */
+		.Media {display:flex;align-items:flex-start;}
+		.Media-figure {margin-right:1em;}
+		.Media-body {flex:1;}
+		
+		/* 固定底栏 */
+		.Site {display:flex;min-height:100vh;flex-direction:column;}
+		.Site-content {flex:1;}	
+	</style>
+</head>
+<body>
+	<section class="container">
+		<span class="flex-center">居中</span>	
+		<span class="flex-right">右对齐</span>	
+		<span class="flex-items-center">上下居中</span>
+		<span class="flex-itemsLeft-center">上下左对齐</span>
+		<span class="flex-itemsRight-center">上下右对齐</span>
+		<span class="flex-itemsBottom-center">底部</span>
+		<span class="flex-rightBottom">右下对齐</span>
+		<span class="flex-justify-content"><i>两端对齐</i><i>两端对齐</i></span>
+		
+		<!-- 多元素上下居中对齐 -->
+		<div class="up-down-center">
+			<div class="box">
+				<h3>上下居中对齐</h3>
+				<h3>上下居中对齐</h3>
+				<img src="42.jpg" alt="">
+			</div>
+		</div>
+		
+		<!-- 百分比 -->
+		<div class="Grid">
+			<div class="Grid-cell">一</div>
+			<div class="Grid-cell">二.</div>
+			<div class="Grid-cell">三</div>
+			<div class="Grid-cell">三</div>
+		</div>
+		
+		<!-- 百分比 居中 -->
+		<div class="Grid">
+		  	<div class="Grid-cell-center">一</div>
+		  	<div class="Grid-cell-center">二.</div>
+		  	<div class="Grid-cell-center">三</div>
+		  	<div class="Grid-cell-center">三</div>
+		</div>
+		
+		<!-- 百分比不对等 -->
+		<div class="Grid-Percentage">
+			<div class="Grid-cell-Percentage u-1of4">11</div>
+			<div class="Grid-cell-Percentage">22</div>
+			<div class="Grid-cell-Percentage u-1of3">33</div>
+		</div>
+		
+		<!-- 输入框布局 -->
+		<div class="InputAddOn">
+			<span class="InputAddOn-item">...</span>
+			<input class="InputAddOn-field">
+			<button class="InputAddOn-item">...</button>
+		</div>
+		
+		<!-- 悬挂式布局 -->
+		<div class="Media">
+		    <img class="Media-figure" src="../images/42.jpg" alt="" width="15%">
+		    <p class="Media-body">奥克的方式哦阿斯蒂芬哦啊手机法袍上访鸡婆阿斯反扒松动分爬山对方爱阿披实的发票上的发生的反扒松地附近扒手的发票</p>
+		</div>		
+	</section>
+
+
+</body>
+
+<div class="Site">
+  <header>头部</header>
+  <main class="Site-content">内容 </main>
+  <footer>底部</footer>
+</div>
+</html>

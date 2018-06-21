@@ -4,3 +4,5 @@
 	2.vue 实现点击当前元素添加class 去掉兄弟的class
 	3.vue实现tab选项卡
 	4.CSS阻止页面滑动
+	5.切图常用的ui
+	6.flex常用的布局
