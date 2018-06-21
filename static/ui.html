@@ -1,0 +1,925 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UI框架</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/ui.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/ui-js.js"></script>
+</head>
+<body>
+	<div class="top">
+		<div class="container"></div>
+	</div>
+	<div class="container clearfix">
+		<div class="sidebar f-fl">
+			<dl class="static">
+				<dt>静态页面</dt>
+				<dd id="on">top-bar</dd>
+				<dd>导航</dd>
+				<dd>面包屑导航</dd>
+				<dd>搜索</dd>
+				<dd>主体布局</dd>
+				<dd>列表</dd>
+				<dd>分页</dd>
+				<dd>标题栏</dd>
+				<dd>表格</dd>
+				<dd>悬挂式布局</dd>
+				<dd>图片底部透明标题</dd>
+				<dd>底部悬浮</dd>
+				<dd>表单</dd>
+				<dt>Jquery效果</dt>
+				<dd>tab选项卡</dd>
+				<dd>回到顶部</dd>
+				<dd>弹框（可关闭）</dd>
+				<dd>动态公告标题（单行）</dd>
+				<dt>Mobile静态页面</dt>
+				<dd>顶部导航（nav-bar）</dd>
+				<dd>横排列表（自适应）</dd>
+				<dd>手风琴（Accordion）</dd>
+			</dl>
+		</div>
+		<div class="mian f-fl">
+			<div class="static-box">
+				<!-- static -->
+				<div class="static-list" style="display:block;">
+					<h3 class="tit">吊顶<i>(top-bar)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="top-bar clearfix mt">
+							<div class="center">
+								<div class="f-fl">客观里边请！打尖还是住店？</div>
+								<div class="f-fr">
+									<ul>
+										<li><a href="">牛肉</a></li>
+										<li><a href="">女儿红</a></li>
+										<li><a href="">红茶</a></li>
+										<li><a href="">烤鸭</a></li>
+										<li><a href="">烧鸡</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy1">复制 html</button>
+							<textarea class="copy1 duplicate" rows="16">
+<div class="top-bar">
+	<div class="center">
+		<div class="f-fl">客观里边请！打尖还是住店？</div>
+		<div class="f-fr">
+			<ul>
+				<li><a href="">牛肉</a></li>
+				<li><a href="">女儿红</a></li>
+				<li><a href="">红茶</a></li>
+				<li><a href="">烤鸭</a></li>
+				<li><a href="">烧鸡</a></li>
+			</ul>
+		</div>
+	</div>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy2">复制 css</button>
+							<textarea class="copy2 duplicate"  rows="6">
+/* top-bar */
+.top-bar{background-color: #ccc;height: 30px;line-height: 30px;}
+.top-bar .center{width: 800px;margin: 0 auto;}
+.top-bar .f-fr ul li{float: left;margin-left: 10px;}
+.top-bar .f-fr ul li:hover{text-decoration: underline;}</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="static-list">
+					<h3 class="tit">导航<i>(nav)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="nav mt">
+							<div class="center">
+								<ul>
+									<li><a href="">首页</a></li>
+									<li><a href="">内容</a></li>
+									<li><a href="">资讯</a></li>
+									<li><a href="">帮助</a></li>
+									<li><a href="">客服</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy3">复制 html</button>
+							<textarea class="copy3 duplicate" rows="10">
+<div class="nav">
+	<ul>
+		<li><a href="">首页</a></li>
+		<li><a href="">内容</a></li>
+		<li><a href="">资讯</a></li>
+		<li><a href="">帮助</a></li>
+		<li><a href="">客服</a></li>
+	</ul>								
+</div></textarea>
+						</div>
+						<div class="clearfix">
+								<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy4">复制 css</button>
+								<textarea class="copy4 duplicate" rows="7">
+/* nav */
+.nav{background-color: #3BB4F2;height: 35px;line-height: 35px;}
+.nav ul{overflow: hidden;}
+.nav ul li{float: left;margin-right: 15px;padding: 0 10px;}
+.nav ul li:hover{background-color: #0E90D2;color: #fff;}
+.nav ul li a{color: #fff;}</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="static-list">
+					<h3 class="tit">面包屑<i>(crumbs)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<ol class="crumbs clearfix mt">
+							<li><a href="#">首页</a></li><li class="arrow">></li>
+							<li><a href="#">分类</a></li><li class="arrow">></li>
+							<li>内容</li>
+						</ol>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy5">复制 html</button>
+							<textarea class="copy5 duplicate" rows="6">
+<ol class="crumbs clearfix">
+	<li><a href="#">首页</a></li><li class="arrow">></li>
+	<li><a href="#">分类</a></li><li class="arrow">></li>
+	<li>内容</li>
+</ol></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy6">复制 css</button>
+							<textarea class="copy6 duplicate"  rows="5">
+/* crumbs */
+.crumbs li{float: left;}
+.crumbs .arrow{margin:3px 5px;color: #999;}
+.crumbs li a{color: #3BB4F2;}</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="static-list">
+					<h3 class="tit">搜索<i>(search)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<form class="search-box mt">
+							<input type="text" class="search f-fl">
+							<button class="f-fr submit" type="button">搜索</button>
+						</form>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy7">复制 html</button>
+							<textarea class="copy7 duplicate" rows="6">
+<form class="search-box mt">
+	<input type="text" class="search f-fl">
+	<button class="f-fr submit" type="button">搜索</button>
+</form></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy8">复制 css</button>
+							<textarea class="copy8 duplicate"  rows="6">
+/* search-box" */
+.search-box{width: 260px;border: 2px solid #3BB4F2;overflow: hidden;}
+.search-box input,.search-box button{height: 35px;line-height: 35px;}
+.search-box .search{border: 0;}
+.search-box .submit{width: 60px;text-align: center;color: #fff;background-color: #3BB4F2;}</textarea>
+						</div>
+					</div>
+					
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">主体布局<i>(layout)</i></h3>
+					<div class="demo-box">
+						<h4>4DEMO</h4>
+						<div class="layout mt clearfix">
+							<div class="f-fl"></div>
+							<div class="f-fr"></div>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy9">复制 html</button>
+							<textarea class="copy9 duplicate" rows="6">
+<div class="layoyt">
+	<div class="f-fl"></div>
+	<div class="f-fr"></div>
+</div>
+</textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy10">复制 css</button>
+							<textarea class="copy10 duplicate"  rows="5">
+/* layout */
+.layout div{border: 1px solid #3BB4F2;}
+.layout .f-fl{width: 700px;height: 200px;}
+.layout .f-fr{width: 200px;height: 200px;}</textarea>
+						</div>
+					</div>	 
+				</div>
+				<div class="static-list">
+					<h3 class="tit">列表<i>(list)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt list-static">
+							<ul>
+								<li><a href="">Whatever is worth doing is worth doing well.</a></li>
+								<li><a href="">Happiness is a way station between too much and too little.</a></li>
+								<li><a href="">In love folly is always sweet.</a></li>
+								<li><a href="">The hard part isn’t making the decision. It’s living with it.</a></li>
+								<li><a href="">Your happy passer-by all knows, my distressed there is no place hides.</a></li>
+							</ul>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy11">复制 html</button>
+							<textarea class="copy11 duplicate" rows="10">
+<div class="list-static">
+	<ul>
+		<li><a href="">Whatever is worth doing is worth doing well.</a></li>
+		<li><a href="">Happiness is a way station between too much and too little.</a></li>
+		<li><a href="">In love folly is always sweet.</a></li>
+		<li><a href="">The hard part isn’t making the decision. It’s living with it.</a></li>
+		<li><a href="">Your happy passer-by all knows, my distressed there is no place hides.</a></li>
+	</ul>
+</div>
+</textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy12">复制 css</button>
+							<textarea class="copy12 duplicate"  rows="6">
+/* list-static */
+.list-static ul{border-top: 1px solid #DEDEDE;}
+.list-static ul li{border-bottom: 1px solid #DEDEDE;height: 35px;line-height: 35px;}
+.list-static ul li a{color: #5990DA;display: block;}
+.list-static ul li:hover a{color: #095F8A;}</textarea>
+						</div>
+					</div>	
+				</div>
+				<div class="static-list">
+					<h3 class="tit">分页<i>(pagination)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt pagination-box">
+							<ul class="pagination">
+								<li class="disabled"><a href=""> << </a></li>
+								<li class="active"><a href="">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">>></a></li>
+							</ul>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy15">复制 html</button>
+							<textarea class="copy15 duplicate" rows="11">
+<div class="pagination-box">
+	<ul class="pagination">
+		<li class="disabled"><a href=""> << </a></li>
+		<li class="active"><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">>></a></li>
+	</ul>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy16">复制 css</button>
+							<textarea class="copy16 duplicate" rows="9">
+/* pagination */
+.pagination-box{text-align: center;}
+.pagination li{display: inline-block;}
+.pagination li.disabled a{cursor: not-allowed;pointer-events: none;color: #999;}
+.pagination li.active a{color: #fff;background-color: #0E90D2;    cursor: default;}
+.pagination li.active:hover a{background-color: #0E90D2;color: #fff;}
+.pagination li a{padding: 5px 8px;border: 1px solid #DEDEDE;font-size: 12px;color: #0E90D2;}  
+.pagination li:hover a{background-color: #EEE;}	
+							</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">标题栏<i>(titlebar)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt titlebar clearfix">
+							<h3 class="f-fl">栏目标题</h3>
+							<a href="" class="more f-fr">更多 >></a>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy17">复制 html</button>
+							<textarea class="copy17 duplicate" rows="5">
+<div class="titlebar clearfix">
+	<h3 class="f-fl">栏目标题</h3>
+	<a href="" class="more f-fr">更多 >></a>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy18">复制 css</button>
+							<textarea class="copy18 duplicate" rows="5">
+/* titlebar */
+.titlebar{border-bottom: 1px solid #DEDEDE;padding-bottom: 5px;}
+.titlebar h3{padding-left: 5px;border-left: 3px solid #0E90D2;height: 30px;line-height: 30px;}
+.titlebar .more{font-size: 14px;margin-top: 10px;}
+</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">表格<i>(table)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt">
+							<table class="table-box bdc">
+								<tr>
+								    <th>标题</th>
+								    <th>标题</th>
+								    <th>标题</th>
+								    <th>标题</th>
+								</tr>
+								<tr>
+							   		<td>文字</td>
+								    <td>文字</td>
+								    <td>文字</td>
+								    <td>文字</td>
+								</tr>
+								<tr>
+							   		<td>文字</td>
+								    <td>文字</td>
+								    <td>文字</td>
+								    <td>文字</td>
+								</tr>		  
+							</table>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy19">复制 html</button>
+							<textarea class="copy19 duplicate" rows="22">
+<table class="table-box bdc">
+	<tr>
+	    <th>标题</th>
+	    <th>标题</th>
+	    <th>标题</th>
+	    <th>标题</th>
+	</tr>
+	<tr>
+   		<td>文字</td>
+	    <td>文字</td>
+	    <td>文字</td>
+	    <td>文字</td>
+	</tr>
+	<tr>
+   		<td>文字</td>
+	    <td>文字</td>
+	    <td>文字</td>
+	    <td>文字</td>
+	</tr>		  
+</table></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy20">复制 css</button>
+							<textarea class="copy20 duplicate" rows="4">/* table-box */
+.table-box{width: 100%;}
+.table-box td,.table-box th{border: 1px solid #dedede;padding: 10px;}</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="static-list">
+					<h3 class="tit">悬挂式布局<i>(suspend)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt suspend clearfix">
+							<div class="photo-box f-fl"><a href="" class="photo"><img src="../images/suspend.jpg"></a></div>
+							<div class="suspend-info">
+								<h3><a href="">微微一笑很倾城 作者：顾曼</a></h3>
+								<p>《微微一笑很倾城》是由上海剧酷文化传播有限公司、华策影业有限公司联合出品的爱情片，由赵天宇执导，张一白监制，Angelababy、井柏然领衔出演。</p>
+							</div>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy27">复制 html</button>
+							<textarea class="copy27 duplicate" rows="9">
+<div class="mt suspend clearfix">
+	<div class="photo-box f-fl"><a href="" class="photo"><img src="../images/suspend.jpg"></a></div>
+	<div class="suspend-info">
+		<h3><a href="">微微一笑很倾城 作者：顾曼</a></h3>
+		<p>《微微一笑很倾城》是由上海剧酷文化传播有限公司、华策影业有限公司联合出品的爱情片，由赵天宇执导，张一白监制，Angelababy、井柏然领衔出演。</p>
+	</div>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy28">复制 css</button>
+							<textarea class="copy28 duplicate" rows="7">
+/* suspend */
+.suspend .photo-box{width: 140px;height: 120px;overflow: hidden;}
+.suspend .photo-box .photo{width: 140px;height: 120px;display: block;overflow: hidden;}
+.suspend .photo-box .photo img{width: 140px;}
+.suspend .suspend-info{padding-left: 155px;}
+.suspend .suspend-info h3 a{white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;overflow: hidden;width: 230px;}
+.suspend .suspend-info h3 a:hover{color: #0E90D2;}</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">图片底部透明标题<i>(lucency-title)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt lucency-title">
+							<ul>
+								<li>
+									<a href="">
+										<span><img src="../images/img-title.jpg"></span>
+										<h3>微微一笑很倾城</h3>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span><img src="../images/img-title.jpg"></span>
+										<h3>微微一笑很倾城</h3>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span><img src="../images/img-title.jpg"></span>
+										<h3>微微一笑很倾城</h3>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy29">复制 html</button>
+							<textarea class="copy29 duplicate" rows="23">
+<div class="mt lucency-title">
+	<ul>
+		<li>
+			<a href="">
+				<span><img src="../images/img-title.jpg"></span>
+				<h3>微微一笑很倾城</h3>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<span><img src="../images/img-title.jpg"></span>
+				<h3>微微一笑很倾城</h3>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<span><img src="../images/img-title.jpg"></span>
+				<h3>微微一笑很倾城</h3>
+			</a>
+		</li>
+	</ul>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy30">复制 css</button>
+							<textarea class="copy30 duplicate" rows="8">/* lucency-title */
+.lucency-title ul{overflow: hidden;margin-left: -15px;}
+.lucency-title ul li{float: left;margin-left: 15px;}
+.lucency-title ul li a{position: relative;}
+.lucency-title ul li a span{width: 185px;height: 190px;overflow: hidden;display: inline-block;}
+.lucency-title ul li a span img{width: 185px;-webkit-transition: transform .3s;-moz-transition: transform .3s;-o-transition: transform .3s;}
+.lucency-title ul li h3{position: absolute;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,.5);color: #fff;text-align: center;line-height: 30px;}
+.lucency-title ul li:hover img{-webkit-transform: scale(1.10);-moz-transform: scale(1.10);    transform: scale(1.10);}</textarea>
+						</div>
+					</div>
+				</div>		
+				<div class="static-list">
+					<h3 class="tit">固定 定位底部<i>(footer-fixed)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy33">复制 html</button>
+							<textarea class="copy33 duplicate" rows="4">
+<div class="footer-pixed">
+	<div class="container"></div>
+</div>								
+</textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy34">复制 css</button>
+							<textarea class="copy34 duplicate" rows="3">
+/* footer-pixed */							
+.footer-pixed{position: fixed;left:0;right:0;bottom:0;background-color: #FAB001;overflow: hidden;height: 40px;}								
+</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">form表单<i>(form)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt">
+							<form action="" class="form-box">
+								<ul>
+									<li><span>姓名</span><input type="text" placeholder="占位符" name="name"></li>
+									<li><span>电话</span><input type="text" name="phone"></li>
+									<li><span>地区</span><select name="" id="">
+										<option value=""></option>
+									</select></li>
+									<li><span>内容</span><textarea name="content" id=""></textarea></li>
+								</ul>
+								<button type="button" class="submit">提交</button>
+							</form>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy35">复制 html</button>
+							<textarea class="copy35 duplicate" rows="20">
+找演示复制					
+</textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy36">复制 css</button>
+							<textarea class="copy36 duplicate" rows="6">/* form-box */
+.form-box ul li{height: 35px;line-height: 35px;}
+.form-box ul li span{display: inline-block;margin-right: 10px;vertical-align: top;}
+.form-box .submit{display: block;width: 80px;height: 30px;line-height: 30px;text-align: center;background-color: #3BB4F2;color: #fff;border-radius: 5px;}</textarea>
+						</div>
+					</div>
+				</div>												
+
+				<!--  jquery  -->
+				<div class="static-list">
+					<h3 class="tit">样式效果<i>(tab)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt tab">
+							<ul>
+								<li class="active">选项一</li>
+								<li>选项二</li>
+								<li>选项三</li>
+							</ul>
+							<div class="tab-list-box">
+								<div class="tab-list" style="display:block;">内容一</div>
+								<div class="tab-list">内容二</div>
+								<div class="tab-list">内容三</div>
+							</div>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy13">复制 html</button>
+							<textarea class="copy13 duplicate" rows="22">
+<div class="tab">
+	<ul>
+		<li class="active">选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+	</ul>
+</div>
+<div class="tab-list-box">
+	<div class="tab-list" style="display:block;">内容一</div>
+	<div class="tab-list">内容二</div>
+	<div class="tab-list">内容三</div>
+</div>
+<script>
+	//tab
+	$(".tab li").click(function() {
+		$(this).addClass('active').siblings().removeClass('active');
+		var li_index = $(".tab li").index(this)
+		$(".tab-list").eq(li_index).fadeIn().siblings('.tab-list').hide();
+	});
+</script>
+</textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy14">复制 css</button>
+							<textarea class="copy14 duplicate"  rows="6">
+/* tab */
+.tab ul{overflow: hidden;border: 1px solid #3BB4F2;display: inline-block;}
+.tab ul li{float: left;cursor: pointer;background-color: #fff;color: #3BB4F2;padding: 5px 20px;}
+.tab ul li.active{background-color: #3BB4F2;color: #fff;}
+.tab-list{display: none;}</textarea>
+						</div>
+					</div>	 
+				</div>
+				<div class="static-list">
+					<h3 class="tit">回到顶部<i>(back-top)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt">复制到本地测试</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy21">复制 html和js</button>
+							<textarea class="copy21 duplicate" rows="19">
+<div class="back-top"></div>
+<script type="text/javascript">
+	//回到顶部
+	$(window).scroll(function(){
+	var sc=$(window).scrollTop();
+	var rwidth=$(window).width()
+	if(sc>0){
+	$(".back-top").css("display","block");
+	$(".back-top").css("left",(rwidth-36)+"px")
+	}else{
+	$(".back-top").css("display","none");
+	}
+	})
+	$(".back-top").click(function(){
+	var sc=$(window).scrollTop();
+	$('body,html').animate({scrollTop:0},500);
+	})
+
+	//2
+    $('.goTop').click(function() {
+    	$('html,body').animate({
+    		'scrollTop':0
+    	});
+    });
+
+    $(window).on('scroll',function(){
+    	if($(window).scrollTop()>100)
+    	{
+    		$('.goTop').show();
+    	}
+    	else
+    	{
+    		$('.goTop').hide();
+    	}
+    });	
+</script></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy22">复制 css</button>
+							<textarea class="copy22 duplicate" rows="6">/* back-top */
+.back-top {position: fixed;line-height:36px;width:36px;bottom:35px;height:36px;cursor:pointer;display:none;background:red;}</textarea>
+						</div>
+					</div>
+				</div>		
+				<div class="static-list">
+					<h3 class="tit">弹框（可关闭）<i>(popup-box)</i></h3>
+					<div class="demo-box">
+						<h4>效果图</h4>
+						<div class="mt">
+ 							<img src="../images/popup.jpg">						
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy23">复制 html</button>
+							<textarea class="copy23 duplicate" rows="28">
+<div class="popup-box">
+	<div class="popup">
+		<div class="head">
+			<h3 class="f-ib">标题</h3>
+			<span class="close f-fr f-csp">X</span>
+		</div>
+		<p class="f-tac">内容</p>
+		<div class="footer f-tac"><span class="confirm">确定</span><span class="close">取消</span></div>
+	</div>
+</div>
+<script>
+	$(function(){
+		//popup-box
+		$(".popup-btn").click(function(){
+			$(".popup-box").show();
+		});
+		$(".close,.confirm").click(function(){
+			$(".popup-box").hide();
+		});
+		$(".popup-box").click(function(){
+			$(this).hide();
+		});
+		$(".popup").click(function(){
+			return false;
+		});
+	});
+</script></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy24">复制 css</button>
+							<textarea class="copy24 duplicate" rows="10">/* popup-box */
+.popup-box{position: fixed;left: 0;right: 0;top: 0;bottom: 0;background-color: rgba(0,0,0,.5);display:none;}
+.popup-box .popup{background-color: #fff;width: 400px;border-radius: 5px;position: absolute;left: 50%;margin-left: -200px;top: 35%;}
+.popup-box .head{padding: 10px;}
+.popup-box .head .colse{color: #0E90D2;font-weight: bold;font-size: 20px;}
+.popup-box .popup p{padding: 10px 0;}
+.popup-box .footer{padding: 10px 0;}
+.popup-box .footer span{cursor: pointer;background-color: #0E90D2;color: #fff;display: inline-block;padding: 5px 8px;margin: 0 10px;}</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">动态公告标题（单行）<i>(scroll-text)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt scroll-text-box">
+							<ul class="scroll-text">
+								<li><a href="">你是我的小苹果</a></li>
+								<li><a href="">怎么爱你都不嫌多</a></li>
+								<li><a href="">红红的小脸温暖我的心窝</a></li>
+								<li><a href="">种下希望就会收获</a></li>
+							</ul>
+							<ul class="swap"></ul>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy25">复制 html</button>
+							<textarea class="copy25 duplicate" rows="34">
+<div class="mt scroll-text-box">
+	<ul class="scroll-text">
+		<li><a href="">你是我的小苹果</a></li>
+		<li><a href="">怎么爱你都不嫌多</a></li>
+		<li><a href="">红红的小脸温暖我的心窝</a></li>
+		<li><a href="">种下希望就会收获</a></li>
+	</ul>
+	<ul class="swap"></ul>
+</div>
+<script>
+	// scroll-title
+	function ul(){	
+		t = parseInt(x.css('top'));
+		y.css('top','30px');	
+		x.animate({top: t - 30 + 'px'},'slow');	//30为每个li的高度
+		if(Math.abs(t) == h-30){ //30为每个li的高度
+			y.animate({top:'0px'},'slow');
+			z=x;
+			x=y;
+			y=z;
+		}
+		setTimeout(ul,3000);//滚动间隔时间 现在是3秒
+	}
+	$(document).ready(function(){
+		$('.swap').html($('.scroll-text').html());
+		x = $('.scroll-text');
+		y = $('.swap');
+		h = $('.scroll-text li').length * 30; //30为每个li的高度
+		setTimeout(ul,3000);//滚动间隔时间 现在是3秒
+		
+	})
+</script></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy26">复制 css</button>
+							<textarea class="copy26 duplicate" rows="5">/* scroll-text */
+.scroll-text-box{height: 30px;line-height: 30px;overflow:hidden; position:relative;border: 1px solid #3BB4F2;}
+.scroll-text,.swap{ line-height:30px; display:inline-block; position:absolute; top:0; left:0;padding-left: 15px;}
+.swap{top:30px;}</textarea>
+						</div>
+					</div>
+				</div>	
+				<div class="static-list">
+					<h3 class="tit">样式效果<i>(nav-bar)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="mt">
+							<header class="nav-bar">
+								<a class="back">< 返回</a>
+								<h3>标题标题标题...</h3>
+							</header>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy36">复制 html</button>
+							<textarea class="copy36 duplicate" rows="5">
+<header class="nav-bar">
+	<a class="back f-fl">< 返回</a>
+	<h3>标题标题标题...</h3>
+</header></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy37">复制 css</button>
+							<textarea class="copy37 duplicate" rows="4">
+/* nav-bar */
+.nav-bar{overflow: hidden;background-color: #3BB4F2;text-align: center;height: 35px;line-height: 35px;padding: 0 15px;color: #fff;}
+.nav-bar .back{float: left;color: #fff;}</textarea>
+						</div>
+					</div>
+				</div>						
+				<div class="static-list">
+					<h3 class="tit">样式效果<i>(row-list)</i></h3>
+					<div class="demo-box">
+						<h4>DEMO</h4>
+						<div class="row-list mt">
+							<ul class="clearifx">
+								<li><a href=""><img src="../images/img-title.jpg"></a></li>
+								<li><a href=""><img src="../images/img-title.jpg"></a></li>
+								<li><a href=""><img src="../images/img-title.jpg"></a></li>
+								<li><a href=""><img src="../images/img-title.jpg"></a></li>
+							</ul>
+						</div>
+						<div class="clearfix mb15">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy31">复制 html</button>
+							<textarea class="copy31 duplicate" rows="8">
+<div class="row-list">
+	<ul>
+		<li><a href=""><img src="../images/img-title.jpg"></a></li>
+		<li><a href=""><img src="../images/img-title.jpg"></a></li>
+		<li><a href=""><img src="../images/img-title.jpg"></a></li>
+		<li><a href=""><img src="../images/img-title.jpg"></a></li>
+	</ul>
+</div></textarea>
+						</div>
+						<div class="clearfix">
+							<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy32">复制 css</button>
+							<textarea class="copy32 duplicate" rows="4">/* row-list */
+.row-list ul{overflow: hidden;margin-left: -1%;}
+.row-list ul li{float: left;width: 24%;margin-left: 1%;text-align: center;}</textarea>
+						</div>
+					</div>
+				</div>		
+	<div class="static-list">
+		<h3 class="tit">样式效果<i>(accordion)</i></h3>
+		<div class="demo-box">
+			<h4>DEMO</h4>
+			<div class="mt">
+				<div class="accordion-box">
+					<div class="accordion-title">新闻中心<i class="f-fr">></i></div>
+					<p class="accordion-content">新闻</p>
+					<p class="accordion-content">新闻</p>
+					<p class="accordion-content">新闻</p>
+					<div class="accordion-title">关于我们<i class="f-fr">></i></div>
+					<p class="accordion-content">我们</p>
+					<p class="accordion-content">我们</p>
+					<p class="accordion-content">我们</p>
+				</div>
+			</div>
+			<div class="clearfix mb15">
+				<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy38">复制 html</button>
+				<textarea class="copy38 duplicate" rows="12">
+<div class="accordion-box">
+	<div class="accordion-title">新闻中心<i class="f-fr">></i></div>
+	<p class="accordion-content">新闻</p>
+	<p class="accordion-content">新闻</p>
+	<p class="accordion-content">新闻</p>
+	<div class="accordion-title">关于我们<i class="f-fr">></i></div>
+	<p class="accordion-content">我们</p>
+	<p class="accordion-content">我们</p>
+	<p class="accordion-content">我们</p>
+</div></textarea>
+			</div>
+			<div class="clearfix">
+				<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy39">复制 css</button>
+				<textarea class="copy39 duplicate" rows="14">
+/* accordion */ 
+.accordion-box .accordion-title{height: 25px;}
+.accordion-box .accordion-content{display: none;}
+.accordion-on i{transform:rotate(90deg);-ms-transform:rotate(90deg);-moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); 
+-o-transform:rotate(90deg);}
+
+//accordion
+$(".accordion-title").click(function(){
+	$(this).toggleClass("accordion-on").siblings(".accordion-title").removeClass("accordion-on");
+	// 修改数字控制速度， slideUp(500)控制卷起速度
+	$(this).next(".accordion-content").slideToggle(500).siblings(".accordion-content").slideUp(500);
+});
+</textarea>
+			</div>
+		</div>
+	</div>
+												
+			</div>	
+		</div>
+	</div>
+<script type="text/javascript">
+var rows=1;//根据文本框初始值设置。
+var cols=10;//根据文本框初始值设置。
+var num=0;
+function changerow(){
+ num++;
+ if(num==rows*cols-1){
+  rows=rows+2;
+  document.getElementById("erea").rows=rows;
+ }
+}
+</script>
+
+	<!-- 复制粘贴 -->
+	<script src="../js/clipboard.min.js"></script>
+	<script>
+
+		var clipboard = new Clipboard('.btn');
+
+		// clipboard.on('success', function(e) {
+		// 	alert("骚年！代码已复制，开始粘贴吧！");
+		// 	console.log(e);
+		// });
+
+		clipboard.on('error', function(e) {
+			console.log(e);
+		});
+	</script>
+
+	<!-- 运行代码 -->
+	<script language="JavaScript" type="text/JavaScript">
+		//运行文本域代码
+		function runEx(cod1) {
+			cod=document.all(cod1)
+			var code=cod.value;
+			if (code!=""){
+			var newwin=window.open('','',''); //打开一个窗口并赋给变量newwin。
+			newwin.opener = null // 防止代码对论谈页面修改
+			newwin.document.write(code); //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
+			newwin.document.close();
+			}
+		}
+	</script>	
+
+	<!-- 空白待添加 -->
+	<div class="static-list">
+		<h3 class="tit">样式效果<i>(top-bar)</i></h3>
+		<div class="demo-box">
+			<h4>DEMO</h4>
+			<div class="mt"></div>
+			<div class="clearfix mb15">
+				<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy00">复制 html</button>
+				<textarea class="copy00 duplicate" rows="10"></textarea>
+			</div>
+			<div class="clearfix">
+				<button type="button" class="btn btn-default f-fl" data-clipboard-action="copy" data-clipboard-target=".copy000">复制 css</button>
+				<textarea class="copy000 duplicate" rows="6"></textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
