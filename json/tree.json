@@ -6,22 +6,22 @@
       {
         "name": "用户管理",
         "value": "yhgl",
-        "checked": true
+        "checked": false
       },
       {
         "name": "用户组管理",
         "value": "yhzgl",
-        "checked": true,
+        "checked": false,
         "list": [
           {
             "name": "角色管理",
             "value": "yhzgl-jsgl",
-            "checked": true,
+            "checked": false,
             "list": [
               {
                 "name": "添加角色",
                 "value": "yhzgl-jsgl-tjjs",
-                "checked": true
+                "checked": false
               },
               {
                 "name": "角色列表",
