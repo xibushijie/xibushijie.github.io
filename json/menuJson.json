@@ -1,10 +1,10 @@
 {
-    "total": 23,
-    "status": 1,
-    "returnCode": "10001",
+    "total": 23, 
+    "status": 1, 
+    "returnCode": "10001", 
     "returnMsg": "成功",
-    "data": {
-        "list": [
+    "data": { 
+        "list": [ 
             {
                 "applicationPackageId": "16677365982635008",
                 "applicationPackageName": "平台级别",
