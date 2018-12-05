@@ -3,8 +3,8 @@
     "status": 1, 
     "returnCode": "10001",
     "returnMsg": "成功", 
-    "data": [     
-        {  
+    "data": [                       
+        {   
             "applicationPackageId": "16677365982635008",
             "applicationPackageName": "平台级别",
             "id": "16641363152872491",
