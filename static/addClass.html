@@ -6,12 +6,13 @@
     <script src="../js/vue.js"></script>
 </head>
 <style type="text/css">
-    .blue {color: #2175bc;}
+	ul li {cursor: pointer;}
+	.blue {color: #2175bc;}
 </style>
 <body>
     <div id="app">
       <ul>
-        <li v-for="(todo, index) in todos" v-on:click="addClass(index)" v-bind:class="{ blue:index==current}">
+        <li v-for="(todo, index) in todos" v-on:click="addClass(index,$event)" v-bind:class="{ blue:index==current}">
             {{ todo.text }}
         </li>
     </ul>
@@ -28,8 +29,12 @@ new Vue({
         ]
     },
     methods:{
-        addClass:function(index){
+        addClass:function(index,event){
             this.current=index;
+			
+			//获取点击对象      
+           var el = event.currentTarget;
+           alert("当前对象的内容："+el.innerHTML);
         }
     }
 })
