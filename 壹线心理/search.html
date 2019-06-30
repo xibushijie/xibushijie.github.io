@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/jquery.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container searchPage">
+        <div class="weui-cell searchBox">
+            <div class="weui-cell__ft">
+                <div class="search"><img src="./images/ic_search_normal.png" class="icon"><input type="text"
+                        placeholder="输入你想查找的关键字"><img src="./images/ic_dele_normal.png" class="close">
+                </div>
+            </div>
+            <div class="weui-cell__bd fs14"><a href="index.html">取消</a></div>
+        </div>
+        <!-- 热搜部分 -->
+        <div class="hotSearch">
+            <div class="f-tac fs14 c888 mb20 mt30">热搜</div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">爱情</div>
+                <div class="weui-flex__item">婚姻</div>
+                <div class="weui-flex__item">恋爱</div>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">职场</div>
+                <div class="weui-flex__item">情商</div>
+                <div class="weui-flex__item">气质</div>
+            </div>
+        </div>
+        <!-- 搜索结果 -->
+        <div class="searchResult">
+            <div class="weui-cell c888">心理测试</div>
+        </div>
+        <!-- 搜索结果是空 -->
+        <div class="searchNull">
+            <div class="f-tac imgBox c888 fs14 mb40">
+                <img src="./images/pic_search_empt.png">
+                <p>什么都没搜到哦～ </p>
+                <p>换个词试试</p>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">爱情</div>
+                <div class="weui-flex__item">婚姻</div>
+                <div class="weui-flex__item">恋爱</div>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">职场</div>
+                <div class="weui-flex__item">情商</div>
+                <div class="weui-flex__item">气质</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".close").click(function () {
+                $(" input[ type='text' ] ").val("")
+            });
+        })
+    </script>
+</body>
+
+</html>
