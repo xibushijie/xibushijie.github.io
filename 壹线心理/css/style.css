@@ -238,10 +238,83 @@ background: #fff;
     background-color: #fff;
     border-radius: 50px;
     margin: 0 7px 15px 7px;
-    padding: 2px 0 4px 0;
+    padding: 3px 0 4px 0;
 }
 
 
 .searchNull .imgBox img {
     width: 30%;
+}
+.searchResult .list {
+    margin-bottom: 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+.searchResult .list .weui-media-box {
+    border-radius: 0;
+}
+.searchResult .list .weui-media-box__desc {
+    -webkit-line-clamp: 2;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+.searchResult .list .ceshiBtn {
+    margin-top: -5px;
+}
+
+.moreBtn {
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #353535;
+}
+.moreBtn span {
+    background: url(../images/ic_more_normal.png) 100% center no-repeat;
+    background-size: 30px;
+    padding-right: 30px;
+}
+.moreBtn span.on {
+    background: url(../images/ic_more_normal\ -top.png) 100% center no-repeat;
+    background-size: 30px;
+}
+
+.searchResult .list.haowen .weui-media-box__desc {
+    margin-bottom: 0;
+}
+
+
+/* detail */
+.detail .content h4 {
+    font-size: 16px;
+    padding-top: 25px;
+    margin-bottom: 10px;
+    color: #353535;
+    text-align: center;
+}
+.detail .content p {
+    font-size: 14px;
+    line-height: 22px;
+    color: #888;
+    margin-bottom: 15px;
+}
+.detail .content img {
+    width: 100%;
+    display: block;
+}
+
+.btnBox div {
+    height: 40px;
+    line-height: 36px;
+    border:1px solid #FF722F;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 20px;
+}
+.btnBox div.share {
+    margin-right: 10px;
+    color: #FF722F;
+}
+.btnBox div.test {
+    background-color: #FF722F;
+    color: #fff;
 }
