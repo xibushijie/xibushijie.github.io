@@ -5,7 +5,9 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
-
+li {
+	list-style: none;
+}
 body {
 	line-height: 1.6;
     font-family: -apple-system-font,Helvetica Neue,sans-serif;
@@ -46,6 +48,8 @@ body {
 .mr15 {
     margin-right: 15px;
 }
+.pt10 {padding-top: 10px;}
+.pt0 {padding-top: 0;}
 .p0-15{padding: 0 15px;}
 
 /* 颜色 */ 
@@ -53,9 +57,14 @@ body {
     color: #888;
 }
 .c333 {
-    color: #333;
+    color: #353535;
 }
-
+.cf00 {
+	color: #FFC4A7;
+}
+.cd2 {
+	color: #d2d2d2;
+}
 /* 字体大小 */
 .fs12{font-size: 12px;}
 .fs14{font-size: 14px;}
@@ -1726,9 +1735,9 @@ a.weui-media-box:active {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
+	/* -webkit-box-align: center;
 	-webkit-align-items: center;
-	align-items: center
+	align-items: center */
 }
 
 .weui-media-box_appmsg .weui-media-box__hd {
@@ -2922,4 +2931,20 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
 	color: #888;
 	text-align: center;
 	font-size: 14px
+}
+
+
+/* placeholder color */
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #B2B2B2;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #B2B2B2;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #B2B2B2;
+}
+
+input {
+	color: #353535;
 }

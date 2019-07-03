@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>壹线心理</title>
+    <title>测试详情</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/jquery.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -18,6 +18,8 @@
             <p>对于无数等待爱情的人来说，街头巷尾偶然间的一场邂逅，是他们最渴望最期待的事情，虽然艳遇的过程不一，情况也不一，但光是这个艳遇本身，都是值得人回味无穷的了。</p>
             <img src="./images/pic_test.png">
         </div>
+
+        <div class="f-tac price">¥9.9<span>¥19.9</span></div>
 
         <div class="weui-flex btnBox">
             <div class="weui-flex__item share">分享给好友</div>
@@ -56,26 +58,70 @@
             </div>
         </div>
 
-        <div >
-            <h3 class="title mt30 f-dib">评论</h3><span>（2个）</span>
+        <div>
+            <h3 class="title mt30 f-dib">评论</h3>
+            <span>（2个）</span>
+            <span class="fs14 f-fr pinglunTit">写评论</span>
         </div>
-        <div class="weui-form-preview ">
-            <div class="weui-form-preview__bd">
-                <div class="weui-form-preview__item">
-                    <label class="weui-form-preview__label"><img src="./images/pic_head@2x.png"></label>
-                    <div class="weui-form-preview__value">
-                        <span>小叮当</span>
-                        <p>测试太准了，佩服佩服~测试太准了，佩服佩服~测试太准了，佩服佩服~</p>
-                        <div>2019-06-13</div>
-                    </d>
+        <!-- 评论列表 -->
+        <div class="pinglun">
+            <div class="pinglunListBox">
+                <div class="weui-form-preview__bd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label"><img src="./images/pic_head@2x.png"></label>
+                        <div class="weui-form-preview__value">
+                            <span>小叮当</span>
+                            <p>测试太准了，佩服佩服~测试太准了，佩服佩服~测试太准了，佩服佩服~</p>
+                            <div>2019-06-13</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-form-preview__bd">
+                    <div class="weui-form-preview__item">
+                        <label class="weui-form-preview__label"><img src="./images/pic_head@2x.png"></label>
+                        <div class="weui-form-preview__value">
+                            <span>小叮当</span>
+                            <p>测试太准了，佩服佩服~测试太准了，佩服佩服~测试太准了，佩服佩服~</p>
+                            <div>2019-06-13</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-           
+            <p class="f-tac footTxt2">真棒！您已经看完了～</p>
+        </div>
+
+        <!-- 评论为空 -->
+        <div class="pinglunNull f-tac">
+            <img src="./images/pic_comment_empty.png">
+            <p class="c888 fs14 mb20">快来做第一个评论的人～</p>
+            <span class="commentBtn">写评论</span>
         </div>
     </div>
 
+    <!-- 评论弹出层-->
+    <div class="f-pf layer f-dn commentTk">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea placeholder="请输入你此刻所想"></textarea>
+            </div>
+            <div class="weui-cell__ft"><button class="submit" disabled='disabled'>提交</button></div>
+        </div>
+    </div>
 
+    <!-- 支付弹弹出层 -->
+    <div class="f-pf f-dn layer play">
+        <div class="box f-tac">
+            <div class="head f-oh f-pr">支付金额
+                <div class="f-pa"><img src="./images/ic_close_normal.png"></div>
+            </div>
+            <div class="price2">¥<span>9.9</span></div>
+            <span class="f-dib playBtn">立即支付</span>
+        </div>
+    </div>
 
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/testDetail.js"></script>
 </body>
 
 </html>
