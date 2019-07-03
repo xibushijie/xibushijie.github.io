@@ -6,16 +6,19 @@
     right: 0;
     top: 0;
     z-index: 2;
+    font-size: 14px;
+    color: #353535;
 }
 .topBar .logo{
     display: inline-block;
     vertical-align: middle;
-    width: 36px;
-    margin-right: 16px;
+    width: 30px;
+    margin-right: 10px;
 }
 .topBar .search {
     background-color: #fff;
     border-radius: 30px;
+    float: right;
 }
 .topBar .search img{
     display: inline-block;
@@ -25,7 +28,12 @@
 }
 .topBar .search input {
     border: 0;
+    width: 80px;
+    border-radius: 30px;
 }
+
+
+
 .swiper-container2 .swiper-slide {
     line-height: 20px;
     background-color: #fff;
@@ -430,6 +438,133 @@ background: #fff;
     margin-top: 5px;
     margin-left: -7px;
     margin-right: -10px;
+}
+
+#topNav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ececec;
+    padding-left: 10px;
+}
+#topNav .swiper-slide {
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 5px 0px 8px 0px;
+    width: auto;
+    text-align: center;
+}
+.fixedFoot77 {
+    margin-bottom: 77px;
+}
+
+#topNav .swiper-slide{
+    transition: all .3s ease;
+    display: block;
+}
+
+#topNav .active::before {
+    content: "";
+    height: 4px;
+    background-color: #FF722F;
+    border-radius:5px;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 0;
+}
+.tab-list {
+    display: none;
+}
+
+#tab4 .myHead p {
+    font-size: 14px;
+}
+#tab4 .hedImgTrue {
+    margin-top: 30px;
+}
+#tab4 .hedImgTrue .name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+}
+#tab4 .hedImg {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 40px;
+    border: 4px solid #fff;
+    margin: 0 auto;
+}
+#tab4 .hedImg img {
+    width: 100%;
+}
+#tab4 .allTest {
+    display: block;
+    background-color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 86px;
+    font-size: 14px;
+    color: #353535;
+}
+#tab4 .fnList a {
+    display: block;
+    font-size: 14px;
+    color: #353535;
+    line-height: 24px;
+}
+#tab4 .fnList {
+    margin-top: 25px;
+    border-radius: 6px;
+}
+#tab4 .fnList .weui-cell__bd img {
+    width: 25px;
+    margin-right: 5px;
+    float: left;
+}
+#tab4 .fnList .weui-cell__ft img {
+    width: 25px;
+    float: right;
+    margin-right: -10px;
+}
+#tab4 .fnList.weui-cell {
+    padding: 10px;
+}
+#tab4 .fnList.weui-cells:after {
+    border-bottom: 0;
+}
+#tab4 .fnList.weui-cells::before {
+    border-top: 0;
+}
+#tab4 .fnList .weui-cell::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #F5F5F5;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+}
+
+.hedImgNull {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 6px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 30px;
+    margin: 45px 0;
+}
+
+/* 固定底栏 */
+.Site {display:flex;min-height:100vh;flex-direction:column;}
+.Site-content {flex:1;}	
+
+.fixedFoot {
+    margin-bottom: 30px;
 }
 
 .classification {
@@ -847,4 +982,46 @@ background: #fff;
 }
 .shareTk .btnIcon img {
     width: 100%;
+}
+
+
+.proposalPage .form {
+    padding-top: 10px;
+}
+.proposalPage .form button {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FF722F;
+    border-radius: 6px;
+    border: none;
+    outline: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.proposalPage .form textarea {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 15px 10px;
+    height: 200px;
+    width: 100%;
+    color: #353535;
+    outline: none;
+    border: none;
+    resize: none;
+    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+}
+.proposalPage footer span {
+    font-size: 14px;
+    color: #888;
+}
+.proposalPage footer div {
+    margin-top: 10px;
+}
+.proposalPage footer div a {
+    color: #353535;
+    font-size: 16px;
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>今日头条APP顶部点击可居中导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.0.6/css/swiper.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #topNav {
+            width: 100%;
+            overflow: hidden;
+            font: 18px;
+        }
+
+        #topNav .swiper-slide {
+            padding: 0 10px;
+            width: auto;
+            text-align: center;
+        }
+
+        #topNav .swiper-slide span {
+            transition: all .3s ease;
+            display: block;
+        }
+
+        #topNav .active span {
+            color: #FF2D2D;
+            border-bottom: 3px solid #FF2D2D;
+        }
+
+        .tab-list {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topNav" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide active"><span>首页</span></div>
+            <div class="swiper-slide"><span>热点</span></div>
+            <div class="swiper-slide"><span>汽车</span></div>
+            <div class="swiper-slide"><span>视频</span></div>
+            <div class="swiper-slide"><span>社会</span></div>
+            <div class="swiper-slide"><span>娱发</span></div>
+            <div class="swiper-slide"><span>科技</span></div>
+            <div class="swiper-slide"><span>生活</span></div>
+            <div class="swiper-slide"><span>敲门</span></div>
+            <div class="swiper-slide"><span>理科</span></div>
+        </div>
+    </div>
+    <div class="tab-list-box">
+        <div class="tab-list" style="display:block;">内容1</div>
+        <div class="tab-list">内容2</div>
+        <div class="tab-list">内容3</div>
+        <div class="tab-list">内容4</div>
+        <div class="tab-list">内容5</div>
+        <div class="tab-list">内容6</div>
+        <div class="tab-list">内容7</div>
+        <div class="tab-list">内容8</div>
+        <div class="tab-list">内容9</div>
+        <div class="tab-list">内容10</div>
+    </div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
+    <script type="text/javascript">
+        var mySwiper = new Swiper('#topNav', {
+            freeMode: true,
+            freeModeMomentumRatio: 0.5,
+            slidesPerView: 'auto',
+        });
+
+        swiperWidth = mySwiper.container[0].clientWidth
+        maxTranslate = mySwiper.maxTranslate();
+        maxWidth = -maxTranslate + swiperWidth / 2
+        $(".swiper-container").on('touchstart', function (e) {
+            e.preventDefault()
+        })
+        mySwiper.on('tap', function (swiper, e) {
+            //  e.preventDefault()
+            slide = swiper.slides[swiper.clickedIndex]
+            slideLeft = slide.offsetLeft
+            slideWidth = slide.clientWidth
+            slideCenter = slideLeft + slideWidth / 2
+            // 被点击slide的中心点
+            mySwiper.setWrapperTransition(300)
+            if (slideCenter < swiperWidth / 2) {
+                mySwiper.setWrapperTranslate(0)
+            } else if (slideCenter > maxWidth) {
+                mySwiper.setWrapperTranslate(maxTranslate)
+            } else {
+                nowTlanslate = slideCenter - swiperWidth / 2
+                mySwiper.setWrapperTranslate(-nowTlanslate)
+            }
+            $("#topNav .active").removeClass('active');
+            $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active');
+
+            $(".tab-list").eq(swiper.clickedIndex).fadeIn().siblings('.tab-list').hide();
+        });
+    </script>
+</body>
+
+</html>
