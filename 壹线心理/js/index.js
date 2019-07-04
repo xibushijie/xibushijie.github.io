@@ -12,7 +12,7 @@ var swiper = new Swiper('.swiper-container2', {
 });
 
 $(function () {
-    FastClick.attach(document.body);
+    // FastClick.attach(document.body);
 
     // 分类页面左侧导航
     $("#tab2 .left li").click(function () {
@@ -40,43 +40,56 @@ $(function () {
         $(this).addClass("on").siblings().removeClass("on");
     })
 
-
-    // 好文页面
-    var mySwiperTop = new Swiper('#topNav', {
-        freeMode: true,
-        freeModeMomentumRatio: 0.5,
-        slidesPerView: 'auto',
-    });
-    swiperWidth = mySwiperTop.container[0].clientWidth
-    maxTranslate = mySwiperTop.maxTranslate();
-    maxWidth = -maxTranslate + swiperWidth / 2
-    $(".swiper-container").on('touchstart', function (e) {
-        e.preventDefault()
+    // 底部的切换
+    $(".weui-tabbar a").click(function () {
+        $(this).addClass("weui-bar__item--on").siblings().removeClass("weui-bar__item--on");
+        var li_index = $(".weui-tabbar a").index(this);
+        $(".weui-tab__bd-item").eq(li_index).fadeIn(0
+            
+            
+            ).siblings('.weui-tab__bd-item').hide();
+        swiperFn();
     })
-    mySwiperTop.on('tap', function (swiper, e) {
-        //  e.preventDefault()
-        slide = swiper.slides[swiper.clickedIndex]
-        slideLeft = slide.offsetLeft
-        slideWidth = slide.clientWidth
-        slideCenter = slideLeft + slideWidth / 2
-        // 被点击slide的中心点
-        mySwiperTop.setWrapperTransition(300)
-        if (slideCenter < swiperWidth / 2) {
-            mySwiperTop.setWrapperTranslate(0)
-        } else if (slideCenter > maxWidth) {
-            mySwiperTop.setWrapperTranslate(maxTranslate)
-        } else {
-            nowTlanslate = slideCenter - swiperWidth / 2
-            mySwiperTop.setWrapperTranslate(-nowTlanslate)
-        }
-        $("#topNav .active").removeClass('active');
-        $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active');
-        $(".tab-list").eq(swiper.clickedIndex).fadeIn().siblings('.tab-list').hide();
-    });
+
+    // // 好文页面
+    function swiperFn() {
+        var mySwiperTop = new Swiper('#topNav', {
+            freeMode: true,
+            freeModeMomentumRatio: 0.5,
+            slidesPerView: 'auto',
+        });
+        swiperWidth = mySwiperTop.container[0].clientWidth
+        maxTranslate = mySwiperTop.maxTranslate();
+        maxWidth = -maxTranslate + swiperWidth / 2
+        $(".swiper-container").on('touchstart', function (e) {
+            e.preventDefault()
+        })
+        mySwiperTop.on('tap', function (swiper, e) {
+            //  e.preventDefault()
+            slide = swiper.slides[swiper.clickedIndex]
+            slideLeft = slide.offsetLeft
+            slideWidth = slide.clientWidth
+            slideCenter = slideLeft + slideWidth / 2
+            // 被点击slide的中心点
+            mySwiperTop.setWrapperTransition(300)
+            if (slideCenter < swiperWidth / 2) {
+                mySwiperTop.setWrapperTranslate(0)
+            } else if (slideCenter > maxWidth) {
+                mySwiperTop.setWrapperTranslate(maxTranslate)
+            } else {
+                nowTlanslate = slideCenter - swiperWidth / 2
+                mySwiperTop.setWrapperTranslate(-nowTlanslate)
+            }
+            $("#topNav .active").removeClass('active');
+            $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active');
+            $(".tab-list").eq(swiper.clickedIndex).fadeIn().siblings('.tab-list').hide();
+        });
+    }
+
 
 
     // 我的页面的跳转
-    $(".allTest").click(function () { 
+    $(".allTest").click(function () {
         $("#tab4").removeClass("weui-tab__bd-item--active");
         $("#tab2").addClass("weui-tab__bd-item--active");
 
