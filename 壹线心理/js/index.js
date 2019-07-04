@@ -44,10 +44,7 @@ $(function () {
     $(".weui-tabbar a").click(function () {
         $(this).addClass("weui-bar__item--on").siblings().removeClass("weui-bar__item--on");
         var li_index = $(".weui-tabbar a").index(this);
-        $(".weui-tab__bd-item").eq(li_index).fadeIn(0
-            
-            
-            ).siblings('.weui-tab__bd-item').hide();
+        $(".weui-tab__bd-item").eq(li_index).fadeIn(0).siblings('.weui-tab__bd-item').hide();
         swiperFn();
     })
 

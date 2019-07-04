@@ -16,20 +16,22 @@
     margin-right: 10px;
 }
 .topBar .search {
-    background-color: #fff;
+    background-color: #f5f5f5;
     border-radius: 30px;
     float: right;
 }
 .topBar .search img{
-    display: inline-block;
-    vertical-align: bottom;
+    float: left;
     width: 25px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .topBar .search input {
     border: 0;
     width: 80px;
+    float: left;
+    margin-top: 6px;
     border-radius: 30px;
+    background-color: #f5f5f5;
 }
 
 
@@ -47,11 +49,12 @@
     display: block;
     margin-top: -2px;
     margin-left: 10px;    
+    padding-bottom: 3px;
     color: #B2B2B2;
 }
 .swiper-container2 .swiper-slide p {
-    margin-left: 10px;    
     font-size: 14px;
+    margin: 2px 0 3px 10px;
 }
 .swiperBox  {
     margin-top: 66px;
@@ -136,7 +139,7 @@ background: #fff;
     font-weight: normal;
     margin-bottom: 15px;
     display: inline-block;
-    background-size: 100% 40%;
+    background-size: 100% 30%;
 }
 
 .all {
@@ -156,10 +159,15 @@ background: #fff;
 .list .weui-media-box {
     background: #fff;
     border-radius: 6px;
+    padding: 10px;
 }
 .list .weui-media-box__hd {
-    width: 90px;
+    width: 100px;
+    height: 75px;
     margin-right: 10px;
+}
+.list .weui-media-box_appmsg .weui-media-box__thumb {
+    max-height: none;
 }
 .list .weui-media-box__bd {
     color: #B2B2B2;
@@ -171,22 +179,25 @@ background: #fff;
 .list .weui-media-box__desc {
     color: #353535;
     font-size: 16px;
-    -webkit-line-clamp: 1;
+    /* -webkit-line-clamp: 1; */
+    padding-top: 5px;
 }
-.list .weui-media-box__bd span {
+.list .weui-media-box__bd>span {
     display: block;
+    padding-top: 3px;
     padding-bottom: 5px;
 }
 .list .ceshiBtn {
     background-color: #FF722F;
     border-radius: 30px;
     color: #fff;
-    padding: 3px 10px 0 10px;
+    padding: 3px 10px 2px 10px;
     margin-top: -7px;
 }
 
 .list2 .weui-media-box__desc {
     -webkit-line-clamp: 2;
+    min-height: 50px;
 }
 .list2 .weui-media-box__hd {
     margin-right: 0;
@@ -194,6 +205,7 @@ background: #fff;
 }
 .list2 .weui-media-box__desc {
     padding-bottom: 5px;
+    line-height: 1.3;
 }
 
 .gs {
@@ -201,11 +213,16 @@ background: #fff;
     font-size: 12px;
     margin-top:  30px;
 }
-
+.hotSearch .fs14{
+    font-size: 13px;
+}
 
 /* searchPage */
 .searchPage {
     margin-bottom: 30px;
+}
+.searchPage .weui-cell {
+    font-size: 13px;
 }
 .searchPage .searchBox {
     background-color: #ECECEC;
@@ -268,6 +285,7 @@ background: #fff;
     -webkit-line-clamp: 2;
     text-align: justify;
     margin-bottom: 15px;
+    line-height: 1.4;
 }
 .searchResult .list .ceshiBtn {
     margin-top: -5px;
@@ -389,13 +407,16 @@ background: #fff;
 
 #tab2 .left {
     height: 100%;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     background-color: #f5f5f5;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+}
+#tab2 .left li:first-child {
+    border-bottom: 1px solid #F5F5F5;
 }
 #tab2 .left li.on {
     background-color: #fff;
@@ -422,7 +443,7 @@ background: #fff;
     position: absolute;
     top: 0;
     right: 0;
-    left: 90px;
+    left: 85px;
     background-color: #fff;
     font-size: 14px;
 }
@@ -588,6 +609,7 @@ background: #fff;
 }
 .classification .list .weui-media-box__desc {
     -webkit-line-clamp: 2;
+    line-height: 1.4;
 }
 
 .sort{
