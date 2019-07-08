@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>textarea高度自适应</title>
+    <style>
+        #textarea {
+            width: 100px;
+            margin: 0 auto;
+            min-height: 20px;
+            max-height: 70px;
+            outline: 0;
+            border: 1px solid #397EFF;
+            font-size: 13px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-user-modify: read-write-plaintext-only;
+        }
+        [contentEditable=true]:empty:not(:focus):before {
+            content: attr(data-text);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="textarea" contenteditable="true" data-text="输入内容..."></div>
+</body>
+
+</html>
