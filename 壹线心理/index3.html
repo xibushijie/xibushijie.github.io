@@ -1,336 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>壹线心理</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/jquery.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./css/mescroll.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <style type="text/css">
+        /*模拟的标题*/
+        .header {
+            z-index: 9990;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ececec;
+        }
+
+
+        /*菜单*/
+        .scrollx {
+            overflow: hidden;
+            height: 36px;
+        }
+
+        .scrollx-content {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .nav {
+            padding: 0 0 0 10px;
+        }
+
+        .nav li {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            margin: 0 10px 10px 10px;
+            font-size: 14px;
+            padding: 5px 0px 8px 0px;
+            position: relative;
+        }
+
+
+        .nav .active::before {
+            content: "";
+            height: 4px;
+            background-color: #FF722F;
+            border-radius: 5px;
+            position: absolute;
+            left: 3px;
+            right: 3px;
+            bottom: 0;
+        }
+
+        /*列表*/
+        .swiper-container {
+            position: fixed;
+            top: 46px;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+        }
+
+        /*展示上拉加载的数据列表*/
+        .data-list li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .data-list .pd-img {
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .data-list .pd-name {
+            font-size: 16px;
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .data-list .pd-price {
+            margin-top: 8px;
+            color: red;
+        }
+
+        .data-list .pd-sold {
+            font-size: 12px;
+            margin-top: 8px;
+            color: gray;
+        }
+
+        /*隐藏*/
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <div class="weui-tab homeTabBar container">
-        <div class="weui-tab__bd">
-            <div id="tab3" class="weui-tab__bd-item" style="display: block;">
-                <div id="topNav" class="swiper-container swiper-container3">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide active">全部</div>
-                        <div class="swiper-slide">心理科普</div>
-                        <div class="swiper-slide">婚恋情感</div>
-                        <div class="swiper-slide">家庭关系</div>
-                        <div class="swiper-slide">人际社交</div>
-                        <div class="swiper-slide">娱乐一下</div>
-                        <div class="swiper-slide">星座运势</div>
-                    </div>
+        <!--标题-->
+        <div class="header">
+            <div class="scrollx mescroll-touch-x">
+                <div id="scrollxContent" class="scrollx-content">
+                    <ul id="nav" class="nav">
+                        <li class="active" i="0">首页</li>
+                        <li i="1">奶粉</li>
+                        <li i="2">面膜</li>
+                        <li i="3">图书</li>
+                        <li i="4">果汁</li>
+                        <li i="5">奶瓶</li>
+                        <li i="6">美素</li>
+                        <li i="7">璐拉</li>
+                        <li i="8">启赋</li>
+                        <li i="9">雅培</li>
+                        <li i="10">花王</li>
+                        <li i="11">韩蜜</li>
+                    </ul>
                 </div>
-                <div class="tab-list-box">
-                    <div class="tab-list" style="display:block;">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">0通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">1通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">2通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">3通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">4通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">5通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-list">
-                        <div class="list-box p0-15 mt10">
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">6通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="weui-panel__bd list list2">
-                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                                    <div class="weui-media-box__bd">
-                                        <p class="weui-media-box__desc ">通过观察孩子们的游戏来了解他们 （上）：愿望和意图</p>
-                                        <footer class="weui-media-box__title">
-                                            <span class="f-fl ">99人已测</span><span class="f-fr">开始测试</span>
-                                        </footer>
-                                    </div>
-                                    <div class="weui-media-box__hd">
-                                        <img class="weui-media-box__thumb" src="./images/pic3.png">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="f-tac gs fixedFoot77">真棒！您已经看完了～</p>
+            </div>
+        </div>
 
+        <!--轮播-->
+        <div id="swiper" class="swiper-container swiper-no-swiping">
+            <div id="swiperWrapper" class="swiper-wrapper">
+                <!--首页-->
+                <div id="mescroll0" class="swiper-slide mescroll">
+                    <ul id="dataList0" class="data-list">
+                        <!--<li>
+							<img class="pd-img" src="../res/img/pd1.jpg"/>
+							<p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>
+							<p class="pd-price">200.00 元</p>
+							<p class="pd-sold">已售50件</p>
+						</li>-->
+                    </ul>
+                </div>
+
+                <!--奶粉-->
+                <div id="mescroll1" class="swiper-slide mescroll">
+                    <ul id="dataList1" class="data-list"> </ul>
+                </div>
+
+                <!--面膜-->
+                <div id="mescroll2" class="swiper-slide mescroll">
+                    <ul id="dataList2" class="data-list"> </ul>
+                </div>
+
+                <!--图书-->
+                <div id="mescroll3" class="swiper-slide mescroll">
+                    <ul id="dataList3" class="data-list"> </ul>
+                </div>
+
+                <!--果汁-->
+                <div id="mescroll4" class="swiper-slide mescroll">
+                    <ul id="dataList4" class="data-list"> </ul>
+                </div>
+
+                <!--奶瓶-->
+                <div id="mescroll5" class="swiper-slide mescroll">
+                    <ul id="dataList5" class="data-list"> </ul>
+                </div>
+
+                <!--美素-->
+                <div id="mescroll6" class="swiper-slide mescroll">
+                    <ul id="dataList6" class="data-list"> </ul>
+                </div>
+
+                <!--璐拉-->
+                <div id="mescroll7" class="swiper-slide mescroll">
+                    <ul id="dataList7" class="data-list"> </ul>
+                </div>
+
+                <!--启赋-->
+                <div id="mescroll8" class="swiper-slide mescroll">
+                    <ul id="dataList8" class="data-list"> </ul>
+                </div>
+
+                <!--雅培-->
+                <div id="mescroll9" class="swiper-slide mescroll">
+                    <ul id="dataList9" class="data-list"> </ul>
+                </div>
+
+                <!--花王-->
+                <div id="mescroll10" class="swiper-slide mescroll">
+                    <ul id="dataList10" class="data-list"> </ul>
+                </div>
+
+                <!--韩蜜-->
+                <div id="mescroll11" class="swiper-slide mescroll">
+                    <ul id="dataList11" class="data-list"> </ul>
+                </div>
             </div>
         </div>
 
@@ -339,26 +210,208 @@
                 <div class="weui-tabbar__icon icon1"></div>
                 <p class="weui-tabbar__label">首页</p>
             </a>
-            <a href="index2.html"  class="weui-tabbar__item">
+            <a href="index2.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon icon2"></div>
                 <p class="weui-tabbar__label ">分类</p>
             </a>
-            <a href="index3.html"  class="weui-tabbar__item weui-bar__item--on">
+            <a href="index3.html" class="weui-tabbar__item weui-bar__item--on">
                 <div class="weui-tabbar__icon icon3"></div>
                 <p class="weui-tabbar__label ">好文</p>
             </a>
-            <a href="index4.html"   class="weui-tabbar__item">
+            <a href="index4.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon icon4"></div>
                 <p class="weui-tabbar__label">我的</p>
             </a>
         </div>
+
     </div>
-
-
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/swiper-3.4.2.jquery.min.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
 </body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        //导航菜单
+        var mescrollArr = new Array(12);//每个菜单对应一个mescroll对象
+
+        //当前菜单下标
+        var curNavIndex = 0;
+
+        //初始化首页
+        mescrollArr[curNavIndex] = initMescroll(curNavIndex);
+
+        /*初始化轮播*/
+        var swiper = new Swiper('#swiper', {
+            observer: true,
+            // effect : 'fade',
+            onTransitionEnd: function (swiper) {
+                var i = swiper.activeIndex;//轮播切换完毕的事件
+                changePage(i);
+            }
+        });
+
+        /*菜单点击事件*/
+        $("#nav li").click(function () {
+            var i = Number($(this).attr("i"));
+            swiper.slideTo(i);//以轮播的方式切换列表
+        })
+
+        /*切换列表*/
+        function changePage(i) {
+            if (curNavIndex != i) {
+                //更改列表条件
+                var curNavDom;//当前菜单项
+                $("#nav li").each(function (n, dom) {
+                    if (dom.getAttribute("i") == i) {
+                        dom.classList.add("active");
+                        curNavDom = dom;
+                    } else {
+                        dom.classList.remove("active");
+                    }
+                });
+                //菜单项居中动画
+                var scrollxContent = document.getElementById("scrollxContent");
+                var star = scrollxContent.scrollLeft;//当前位置
+                var end = curNavDom.offsetLeft + curNavDom.clientWidth / 2 - document.body.clientWidth / 2; //居中
+                mescrollArr[curNavIndex].getStep(star, end, function (step, timer) {
+                    scrollxContent.scrollLeft = step; //从当前位置逐渐移动到中间位置,默认时长300ms
+                });
+                //隐藏当前回到顶部按钮
+                mescrollArr[curNavIndex].hideTopBtn();
+                //取出菜单所对应的mescroll对象,如果未初始化则初始化
+                if (mescrollArr[i] == null) {
+                    mescrollArr[i] = initMescroll(i);
+                } else {
+                    //检查是否需要显示回到到顶按钮
+                    var curMescroll = mescrollArr[i];
+                    var curScrollTop = curMescroll.getScrollTop();
+                    if (curScrollTop >= curMescroll.optUp.toTop.offset) {
+                        curMescroll.showTopBtn();
+                    } else {
+                        curMescroll.hideTopBtn();
+                    }
+                }
+                //更新标记
+                curNavIndex = i;
+            }
+        }
+
+        /*创建MeScroll对象*/
+        function initMescroll(index) {
+            //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
+            var mescroll = new MeScroll("mescroll" + index, {
+                //上拉加载的配置项
+                up: {
+                    callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+                    isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+                    noMoreSize: 4, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+                    empty: {
+                        // icon: "../res/img/mescroll-empty.png", //图标,默认null
+                        tip: "暂无相关数据~", //提示
+                    },
+                    clearEmptyId: "dataList" + index,
+                    // toTop: { //配置回到顶部按钮
+                    //     src: "../res/img/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                    //     //offset : 1000
+                    // },
+                    isBounce: false,
+                    lazyLoad: {
+                        use: true // 是否开启懒加载,默认false
+                    }
+                }
+            });
+            return mescroll;
+        }
+
+        /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+        function getListData(page) {
+            //联网加载数据
+            var dataIndex = curNavIndex; //记录当前联网的nav下标,防止快速切换时,联网回来curNavIndex已经改变的情况;
+            getListDataFromNet(dataIndex, page.num, page.size, function (pageData) {
+                //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+                //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+                console.log("dataIndex=" + dataIndex + ", curNavIndex=" + curNavIndex + ", page.num=" + page.num + ", page.size=" + page.size + ", pageData.length=" + pageData.length);
+                mescrollArr[dataIndex].endSuccess(pageData.length);
+
+                //设置列表数据
+                setListData(pageData, dataIndex);
+            }, function () {
+                //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                mescrollArr[dataIndex].endErr();
+            });
+        }
+
+        /*设置列表数据
+         * pageData 当前页的数据
+         * dataIndex 数据属于哪个nav */
+        function setListData(pageData, dataIndex) {
+            var listDom = document.getElementById("dataList" + dataIndex);
+            for (var i = 0; i < pageData.length; i++) {
+                var pd = pageData[i];
+                var str = '';
+                str += '<div class="weui-panel__bd list list2">';
+                str += '<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">';
+                str += '<div class="weui-media-box__bd">';
+                str += '<p class="weui-media-box__desc ">' + pd.pdName + '</p>';
+                str += '<footer class="weui-media-box__title">';
+                str += '<span class="f-fl ">' + pd.pdPrice + '人已测</span><span class="f-fr">开始测试</span>';
+                str += '</footer>';
+                str += '</div>';
+                str += '<div class="weui-media-box__hd">';
+                str += '<img class="weui-media-box__thumb" src="' + pd.pdImg + '">';
+                str += '</div>';
+                str += '</a>';
+                str += '</div>';
+
+                // var str = '<img class="pd-img" src="../res/img/loading-sq.png" imgurl="' + pd.pdImg + '"/>';
+                // str += '<p class="pd-name"></p>';
+                // str += '<p class="pd-price"> 元</p>';
+                // str += '<p class="pd-sold">已售' + pd.pdSold + '件</p>';
+
+                var liDom = document.createElement("li");
+                liDom.innerHTML = str;
+                listDom.appendChild(liDom);
+            }
+        }
+
+        function getListDataFromNet(curNavIndex, pageNum, pageSize, successCallback, errorCallback) {
+            //延时一秒,模拟联网
+            setTimeout(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: './pdlist1.json',
+                    //		                url: '../res/pdlist1.json?curNavIndex='+curNavIndex+'&num='+pageNum+'&size='+pageSize,
+                    dataType: 'json',
+                    success: function (data) {
+                        var listData = [];
+
+                        if (curNavIndex == 0) {
+                            //首页 (模拟分页数据)
+                            for (var i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
+                                if (i == data.length) break;
+                                listData.push(data[i]);
+                            }
+
+                        } else {
+                            //关键词筛选模拟数据
+                            var keyword = ["全部", "心里", "面膜", "图书", "果汁", "奶瓶", "美素", "璐拉", "启赋", "雅培", "花王", "韩蜜"];
+                            var curword = keyword[curNavIndex];
+                            for (var i = 0; i < data.length; i++) {
+                                if (data[i].pdName.indexOf(curword) != -1) {
+                                    listData.push(data[i]);
+                                }
+                            }
+                        }
+
+                        //回调
+                        successCallback(listData);
+                    },
+                    error: errorCallback
+                });
+            }, 500)
+        }
+
+    });
+</script>
 
 </html>
