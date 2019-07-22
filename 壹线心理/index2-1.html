@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>壹线心理</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/jquery.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mescroll.min.css">
+    <style>
+        .weui-loading {
+            margin-right: 5px;
+            vertical-align: top;
+        }
+
+        .sort li {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weui-tab homeTabBar container ">
+        <div class="weui-tab__bd">
+            <div id="tab2" class="weui-tab__bd-item" style="display: block;">
+                <div class="left f-fl">
+                    <ul>
+                        <li class="on" id="0"><span>全部</span></li>
+                    </ul>
+                </div>
+                <div class="right outer">
+                    <div class="mainHead">
+                        <div class="f-fl">排序</div>
+                        <div class="f-fr sortBtn">按时间<img src="./images/ic_more.png"></div>
+                    </div>
+                    <div class="f-pa sort f-pa">
+                        <ul>
+                            <li class="on" value="time"><span>按时间</span></li><br>
+                            <li value="hot"><span>按热度</span></li>
+                        </ul>
+                    </div>
+                    <div class="inner mescroll" id="mescroll" style="margin-top: 40px;">
+                        <div class="list-box classification lists data-list" id="dataList" style="padding-top: 0;">
+                        </div>
+                    </div>
+                    <!-- 站位勿删 -->
+                    <div style="height: 55px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-tabbar ">
+            <a href="index.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon icon1"></div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="index2.html" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon icon2"></div>
+                <p class="weui-tabbar__label ">分类</p>
+            </a>
+            <a href="index3.html" class="weui-tabbar__item ">
+                <div class="weui-tabbar__icon icon3"></div>
+                <p class="weui-tabbar__label ">好文</p>
+            </a>
+            <a href="index4.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon icon4"></div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/mescroll.min.js"></script>
+    <script>
+        var id = 0;
+        var time = "time";
+        // 排序弹框
+        $(".sortBtn").click(function () {
+            if ($(".sort").is(":hidden")) {
+                $(".sort").show();
+                $(".sortBtn img").css({ "transform": "rotate(180deg)" });
+            } else {
+                $(".sort").hide();
+                $(".sortBtn img").css({ "transform": "rotate(0deg)" });
+            }
+        });
+        $(".sort").click(function () {
+            $(this).hide();
+        })
+        $(".sort ul").click(function () {
+            return false;
+        });
+        // 排序的请求
+        $(".sort li").click(function () {
+            $(this).addClass("on").siblings().removeClass("on");
+            var sortVal = $(this).attr("value");
+            time = sortVal;
+            console.log(sortVal);
+            dataFn();
+        })
+
+        // 请求菜单
+        $.ajax({
+            type: 'GET',
+            url: './menu.json',
+            //url: '../res/pdlist1.json?num='+pageNum+"&size="+pageSize,
+            dataType: 'json',
+            success: function (data) {
+                var data = data.data;
+                var str = "";
+                for (let i = 0; i < data.length; i++) {
+                    str += '<li id="' + data[i].type + '"><span>' + data[i].name + '</span></li>';
+                }
+                $("#tab2 .left ul").append(str);
+                // 分类页面左侧导航
+                $("#tab2 .left li").click(function () {
+                    $(".sort").hide();
+                    $(this).addClass("on").siblings().removeClass("on");
+
+                    
+                    var onId = $(this).attr("id");
+                    id = onId;
+                    console.log(onId);
+                    dataFn();
+                });
+            }
+        });
+
+        dataFn();
+        function dataFn() {
+            //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
+            var mescroll = new MeScroll("mescroll", {
+                up: {
+                    callback: getListData,
+                    isBounce: false,
+                    clearEmptyId: "dataList",
+                    lazyLoad: {
+                        use: true // 是否开启懒加载,默认false
+                    },
+                    page: {
+                        num: 0,
+                        size: 5,
+                        time: null
+                    }
+                }
+            });
+
+            /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+            function getListData(page) {
+                var pageNum = page.num; // 页码, 默认从1开始 如何修改从0开始 ?
+                var pageSize = page.size; // 页长, 默认每页10条
+                //联网加载数据
+                getListDataFromNet(page.num, page.size, function (curPageData) {
+                    console.log("page.num=" + page.num + ", page.size=" + page.size + ", curPageData.length=" + curPageData.length);
+                    mescroll.endSuccess(curPageData.length);
+                    setListData(curPageData);
+                }, function () {
+                    //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                    mescroll.endErr();
+                });
+            }
+
+            /*设置列表数据*/
+            function setListData(curPageData) {
+                var listDom = document.getElementById("dataList");
+                var result = '';
+                for (var i = 0; i < curPageData.length; i++) {
+                    result += '<div class="weui-panel__bd list">';
+                    result += '<a href="javascript:void(0);" class="weui-media-box_appmsg">';
+                    result += '<div class="weui-media-box__hd">';
+                    result += '<img class="weui-media-box__thumb" src="' + curPageData[i].pic + '">';
+                    result += '</div>';
+                    result += '<div class="weui-media-box__bd">';
+                    result += '<p class="weui-media-box__desc ">' + curPageData[i].title + '</p>';
+                    result += '<span class=" fs14">性魅力指数评估</span>';
+                    result += '<footer class="weui-media-box__title">';
+                    result += '<span class="f-fl ">99人已测</span>';
+                    result += '</footer>';
+                    result += '</div>';
+                    result += '</a>';
+                    result += '</div>';
+                }
+                $("#dataList").append(result);
+            }
+            function getListDataFromNet(pageNum, pageSize, successCallback, errorCallback) {
+                setTimeout(function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: './more.json',
+                        data: {
+                            id: id,
+                            value: time
+                        },
+                        //url: '../res/pdlist1.json?num='+pageNum+"&size="+pageSize,
+                        dataType: 'json',
+                        success: function (data) {
+                            //模拟分页数据
+                            var data = data.lists;
+                            var listData = [];
+                            for (var i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
+                                if (i == data.length) break;
+                                listData.push(data[i]);
+                            }
+                            successCallback(listData);
+                        },
+                        error: errorCallback
+                    });
+                }, 1000)
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -29,7 +29,7 @@
     border: 0;
     width: 80px;
     float: left;
-    margin-top: 5px;
+    margin-top: 6px;
     border-radius: 30px;
     background-color: #f5f5f5;
 }
@@ -192,7 +192,7 @@ background: #fff;
     border-radius: 30px;
     color: #fff;
     padding: 3px 10px 2px 10px;
-    margin-top: -7px;
+    margin-top: -3px;
 }
 
 .list2 .weui-media-box__desc {
@@ -245,7 +245,7 @@ background: #fff;
     border: 0;
     font-size: 12px;
     float: left;
-    margin-top: 7px;
+    margin-top: 6.5px;
     width: 80%;
 }
 .searchPage .search .close {
@@ -315,11 +315,14 @@ background: #fff;
 .searchResult .list.haowen .weui-media-box__desc {
     margin-bottom: 0;
 }
+#swiper {
+    bottom: 60px;
+}
 
 
 /* detail */
 .detail .content h4 {
-    font-size: 16px;
+    font-size: 17px;
     padding-top: 25px;
     margin-bottom: 10px;
     color: #353535;
@@ -652,9 +655,12 @@ background: #fff;
     background-color: #fff;
     color: #c1c1c1;
     font-size: 12px;
-    padding-top: 20px;
+    padding-top: 18px;
 }
 
+.headerTab2 .nav .active span {
+    font-weight: bold;
+}
 
 /* haowenDetail */
 .haowenDetail .content h4{
@@ -1043,6 +1049,7 @@ background: #fff;
     outline: none;
     border: none;
     resize: none;
+    font-size: 15px;
     font-family: -apple-system-font,Helvetica Neue,sans-serif;
 }
 .proposalPage footer span {
