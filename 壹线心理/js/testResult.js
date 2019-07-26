@@ -1,4 +1,12 @@
 $(function () {
+    // 右上角分享
+    $(".shareArrow").click(function(){
+        $(".wxShareTk").show();
+    });
+    $(".wxShareTkBox").click(function(){
+        $(".wxShareTk").hide();
+    });
+
     // 保存结果图的事件
     $(".holdBtn").click(function () {
         $(".downTk").show();
@@ -18,7 +26,7 @@ $(function () {
     var mescroll = new MeScroll("mescroll", {
         up: {
             callback: getListData,
-            isBounce: false,
+            isBounce: true,
             clearEmptyId: "dataList",
             lazyLoad: {
                 use: true // 是否开启懒加载,默认false
@@ -33,16 +41,19 @@ $(function () {
 
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page) {
+
         var pageNum = page.num; // 页码, 默认从1开始 如何修改从0开始 ?
         var pageSize = page.size; // 页长, 默认每页10条
         //联网加载数据
         getListDataFromNet(page.num, page.size, function (curPageData) {
+
             console.log("page.num=" + page.num + ", page.size=" + page.size + ", curPageData.length=" + curPageData.length);
             mescroll.endSuccess(curPageData.length);
             setListData(curPageData);
         }, function () {
             //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
             mescroll.endErr();
+
         });
     }
 
@@ -78,6 +89,7 @@ $(function () {
             // result += '</div>';
         }
         $("#dataList").append(result);
+
     }
     function getListDataFromNet(pageNum, pageSize, successCallback, errorCallback) {
 
@@ -96,6 +108,7 @@ $(function () {
                         listData.push(data[i]);
                     }
                     successCallback(listData);
+
                 },
                 error: errorCallback
             });
