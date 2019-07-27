@@ -1,5 +1,6 @@
 var mySwiper = new Swiper('.swiper-container', {
     autoplay: false,
+    effect : 'fade',
     // autoHeight: true,
     pagination: '.swiper-pagination',
     paginationType: 'fraction'

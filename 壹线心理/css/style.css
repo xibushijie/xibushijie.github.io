@@ -874,7 +874,7 @@ background: #fff;
 .swiper-container.testList .swiper-slide ul li::before {
     content: "";
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 50%;
     margin-top: -7.5px;;
     width: 15px;
