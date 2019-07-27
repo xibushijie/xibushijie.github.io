@@ -145,28 +145,30 @@
 <script src="./js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
-    // 排序弹框
-    $(".sortBtn").click(function () {
-        if ($(".sort").is(":hidden")) {
-            $(".sort").show();
-            $(".sortBtn img").css({ "transform": "rotate(180deg)" });
-        } else {
-            $(".sort").hide();
-            $(".sortBtn img").css({ "transform": "rotate(0deg)" });
-        }
-    });
-    $(".sort").click(function () {
-        $(this).hide();
-    })
-    $(".sort ul").click(function () {
-        return false;
-    });
-    $(".sort li").click(function () {
-        $(this).addClass("on").siblings().removeClass("on");
-    })
-</script>
-<script type="text/javascript" charset="utf-8">
+
+
     $(function () {
+        // 排序弹框
+        $(".sortBtn").click(function () {
+            if ($(".sort").is(":hidden")) {
+                $(".sort").show();
+                $(".sortBtn img").css({ "transform": "rotate(180deg)" });
+            } else {
+                $(".sort").hide();
+                $(".sortBtn img").css({ "transform": "rotate(0deg)" });
+            }
+        });
+        $(".sort").click(function () {
+            $(this).hide();
+        })
+        $(".sort ul").click(function () {
+            return false;
+        });
+        $(".sort li").click(function () {
+            $(this).addClass("on").siblings().removeClass("on");
+
+        });
+
         var curNavIndex = 0;
         var mescrollArr = new Array(4);
 
@@ -192,7 +194,7 @@
                 var data = data.data;
                 var str = "";
                 for (let i = 0; i < data.length; i++) {
-                    str += '<p i="'+data[i].type+'"><span>' + data[i].name + '</span></p>';
+                    str += '<p i="' + data[i].type + '"><span>' + data[i].name + '</span></p>';
                 }
                 $("#nav").append(str);
                 menuFn();
