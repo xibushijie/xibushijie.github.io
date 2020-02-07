@@ -12,15 +12,15 @@
 <body>
 
     <p id="demo">点击这个按钮，获得您的坐标：</p>
-    <button onclick="getLocation()">试一下</button>
+    <button onclick="getLocation()" class="btn">试一下</button>
     <script>
-        function getLocation() {
+        $(".btn").click(function(){
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
                 $("#demo").html("获取位置失败")
             }
-        }
+        })
         function showPosition(position) {
             $("#demo").html("经纬度" + position.coords.longitude + "," + position.coords.latitude);
         }
