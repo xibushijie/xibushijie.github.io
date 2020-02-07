@@ -13,7 +13,7 @@
         //判断是否支持 获取本地位置
         if (navigator.geolocation) {
             var n = navigator.geolocation.getCurrentPosition(function (res) {
-                console.log(res); // 需要的坐标地址就在res中
+                alert(res); // 需要的坐标地址就在res中
             });
         } else {
             alert('该浏览器不支持定位');
