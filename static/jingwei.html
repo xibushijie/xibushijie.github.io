@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //判断是否支持 获取本地位置
+        if (navigator.geolocation) {
+            var n = navigator.geolocation.getCurrentPosition(function (res) {
+                console.log(res); // 需要的坐标地址就在res中
+            });
+        } else {
+            alert('该浏览器不支持定位');
+        }
+    </script>
+</body>
+
+</html>
