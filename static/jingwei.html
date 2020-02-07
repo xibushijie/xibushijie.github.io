@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -13,17 +14,15 @@
     <p id="demo">点击这个按钮，获得您的坐标：</p>
     <button onclick="getLocation()">试一下</button>
     <script>
-        var x = document.getElementById("demo");
         function getLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(coords);
-                alert(navigator.geolocation.getCurrentPosition(coords));
+                navigator.geolocation.getCurrentPosition(showPosition);
             } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+                $("#demo").html("获取位置失败")
             }
         }
         function showPosition(position) {
-            x.innerHTML = "经纬度" + position.coords.longitude + "," + position.coords.latitude;
+            $("#demo").html("经纬度" + position.coords.longitude + "," + position.coords.latitude);
         }
     </script>
 </body>
