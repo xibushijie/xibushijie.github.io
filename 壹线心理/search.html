@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/jquery.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container searchPage">
+        <div class="weui-cell searchBox">
+            <div class="weui-cell__ft">
+                <div class="search"><img src="./images/ic_search_normal.png" class="icon"><input type="text"
+                        placeholder="输入你想查找的关键字"><img src="./images/ic_dele_normal.png" class="close">
+                </div>
+            </div>
+            <div class="weui-cell__bd fs14"><a href="index.html">取消</a></div>
+        </div>
+        <!-- 热搜部分 -->
+        <div class="hotSearch">
+            <div class="f-tac fs14 c888 mb20 mt30">热搜</div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">爱情</div>
+                <div class="weui-flex__item">婚姻</div>
+                <div class="weui-flex__item">恋爱</div>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">职场</div>
+                <div class="weui-flex__item">情商</div>
+                <div class="weui-flex__item">气质</div>
+            </div>
+        </div>
+        <!-- 搜索结果 -->
+        <div class="searchResult">
+            <div class="weui-cell c888">心理测试</div>
+            <div class="weui-panel__bd list">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc ">云养猫测试：你最适合养什么猫？如果出现两行的请</p>
+                        <footer class="weui-media-box__title">
+                            <span class="f-fl mr15">性格</span>
+                            <span class="f-fl ">99人已测</span>
+                            <span class="f-fr ceshiBtn">开始测试</span>
+                        </footer>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-panel__bd list">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc ">云养猫测试：你最适合养什么猫？如果出现两行的请 况的话，我是两行的情况</p>
+                        <footer class="weui-media-box__title">
+                            <span class="f-fl mr15">性格</span><span class="f-fl ">99人已测</span><span
+                                class="f-fr  ceshiBtn">开始测试</span>
+                        </footer>
+                    </div>
+                </a>
+            </div>
+            <div class="f-tac moreTxt f-dn">真棒！您已经看完了~</div>
+            <div class="f-tac fs14 c888 moreBtn"><span>展开更多</span></div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips c888">加载中</span>
+            </div>
+
+            <div class="weui-cell c888">心理好文</div>
+            <div class="weui-panel__bd list haowen">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc ">云养猫测试：你最适合养什么猫？如果出现两行的请 况的话，我是两行的情况</p>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-panel__bd list">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc ">云养猫测试：你最适合养什么猫？如果出现两行的请 况的话，我是两行的情况</p>
+                    </div>
+                </a>
+            </div>
+            <div class="f-tac moreTxt f-dn">真棒！您已经看完了~</div>
+
+            <div class="f-tac fs14 c888 moreBtn"><span>展开更多</span></div>
+        </div>
+        <!-- 搜索结果是空 -->
+        <div class="searchNull">
+            <div class="f-tac imgBox c888 fs14 mb40 mt30">
+                <img src="./images/pic_search_empt.png">
+                <p>什么都没搜到哦～ </p>
+                <p>换个词试试</p>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">爱情</div>
+                <div class="weui-flex__item">婚姻</div>
+                <div class="weui-flex__item">恋爱</div>
+            </div>
+            <div class="weui-flex f-tac searchTag">
+                <div class="weui-flex__item">职场</div>
+                <div class="weui-flex__item">情商</div>
+                <div class="weui-flex__item">气质</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".close").click(function () {
+                $(" input[ type='text' ] ").val("")
+            });
+
+            // 搜索
+            $(".search img").click(function () {
+                var search = $(".search input").val();
+
+                // 这里写搜索的请求  把 search的值 发到数据库
+                console.log(search);
+            });
+
+            // 回车事件
+            $(document).keyup(function (event) {
+                if (event.keyCode == 13) {
+                    var search = $(".search input").val();
+
+                    // 这里写搜索的请求  把 search的值 发到数据库
+                    console.log(search);
+                }
+            });
+
+
+            // 查看更多
+            $(".moreBtn span").click(function () {
+                // 1、进行翻页处理
+                //...
+
+                // 2、如果翻页的数据加载完 执行这个代码
+                $(".moreTxt").show();  //显示 “真棒！您已经看完了”，
+                $(".moreBtn span").addClass("on").html("点击收起");
+
+                // 3、重新请求把它恢复成默认的2条状态 隐藏 “真棒！您已经看完了”，按钮的文字改成“展开更多”
+                $(".moreTxt").hide(); //隐藏 “真棒！您已经看完了”，
+                $(".moreBtn span").addClass("on").html("展开更多");
+
+
+            });
+        })
+    </script>
+</body>
+
+</html>
